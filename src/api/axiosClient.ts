@@ -22,4 +22,30 @@ axiosClient.interceptors.request.use((config) => {
   return config;
 });
 
+axiosClient.interceptors.response.use((res) => {
+  return res
+}, (error) => { 
+
+  const params = error.config.params || {}
+
+  if (error.config.method ==='get'&&error.status === 404 && params.locale && params.final !== 'true') {
+    const newLocale = params.locale === 'en' ? 'vi' : 'en';
+    const newResponse = axiosClient.get(error.config.url!, {
+      params: {
+        ...params,
+        locale: newLocale,
+        final: 'true',
+      },
+      headers: {
+        ...error.config.headers,
+      },
+    });
+    return newResponse
+  }
+
+  return error;
+}
+)
+  
+
 export default axiosClient;

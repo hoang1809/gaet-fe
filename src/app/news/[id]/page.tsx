@@ -12,12 +12,14 @@ import { Button } from "@/components/ui/button";
 import { useFetchNewsDetail } from "@/hooks/useFetchNewsDetail";
 import Link from "next/link";
 import Loading from "@/components/common/Loading";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   params: Promise<{ id: string }>;
 };
 
 const NewsDetailPage = ({ params }: Props) => {
+  const {t} = useTranslation();
   const { id } = use(params);
 
   const { isLoading, error, data } = useFetchNewsDetail(id);
@@ -38,7 +40,7 @@ const NewsDetailPage = ({ params }: Props) => {
       <Link href="/">
         <Button variant="outline" className="mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Quay lại trang chủ
+          {t('business_back_to_home')}
         </Button>
       </Link>
       <div className="text-3xl md:text-4xl font-bold">{data.data.title}</div>

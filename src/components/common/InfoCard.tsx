@@ -12,6 +12,7 @@ type Props = {
   title: string;
   description: string;
   detailPath?: string;
+  
 };
 
 const InfoCard = ({ id, tag, createdAt, image, title, description, detailPath }: Props) => {
@@ -51,7 +52,7 @@ const InfoCard = ({ id, tag, createdAt, image, title, description, detailPath }:
         <p className="text-gray-600 text-sm line-clamp-3 mb-4">{description}</p>
 
         <Link
-          href={`/news/${id}`}
+          href={`${detailPath ? `/${detailPath}/${id}` : '#'}`}
           className="inline-flex items-center text-gaet-600 font-medium text-sm hover:text-gaet-800 transition-colors"
         >
           Đọc tiếp
