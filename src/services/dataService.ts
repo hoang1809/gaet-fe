@@ -140,3 +140,12 @@ export const fetchAbout = async (): Promise<{ data: About }> => {
   return response.data;
 };
 
+export const fetchPartners = async (): Promise<{ data: Partner[] }> => {
+  const response = await axiosClient.get(endpoints.getPartners, {
+    params: {
+      populate: "*",
+    },
+  });
+  return response.data;
+};
+

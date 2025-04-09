@@ -13,5 +13,6 @@ export const endpoints = {
   getPolicy: "/policy-page",
   getTerms: "/terms-page",
   getAbout: "/about",
+  getPartners: "/partners",
   PostMessage : "/messages",
 };

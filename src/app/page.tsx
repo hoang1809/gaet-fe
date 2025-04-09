@@ -26,7 +26,7 @@ export default function Home() {
       <HeroSection videoUrl={data.data.video.url} />
       <AboutSection description={data.data.description} features={data.data.features}/>
       <BusinessSection description={data.data.business_description}/>
-      <PartnerSection description={data.data.partner_description} partners={data.data.partners}/>
+      <PartnerSection description={data.data.partner_description}/>
       <NewsSection/>
     </>
   );

@@ -4,12 +4,28 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { getStrapiMedia } from "@/utils";
 import { useTranslation } from "react-i18next";
+import { useFetchPartners } from "@/hooks/useFetchPartners";
+import Loading from "../common/Loading";
 type Props = {
   description: string;
-  partners: Partner[];
 };
-const PartnerSection = ({ description, partners }: Props) => {
+const PartnerSection = ({ description }: Props) => {
   const { t } = useTranslation();
+
+  const { isLoading, error, data } = useFetchPartners();
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <div>An error occurred: {error.message}</div>;
+  }
+  if (!data || !data.data) {
+    return <div>No data available</div>;
+  }
+
+
   const scrollLeft = () => {
     const container = document.getElementById("partners-container");
     if (container) {
@@ -45,7 +61,7 @@ const PartnerSection = ({ description, partners }: Props) => {
           id="partners-container"
           className="flex overflow-x-auto gap-8 pb-8 px-4 scrollbar-hide scroll-smooth"
         >
-          {partners.map((partner, index) => (
+          {data.data.map((partner, index) => (
             <div
               key={partner.id}
               className="flex-shrink-0 glass-card p-6 rounded-xl w-64 flex flex-col items-center justify-center text-center"
