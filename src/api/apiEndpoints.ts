@@ -1,0 +1,17 @@
+export const endpoints = {
+  getNewsList: "/news",
+  getNewsDetail: (id: string) => `/news/${id}`,
+  getMembers: "/members",
+  getMembersDetail: (id: string) => `/members/${id}`,
+  getBusinessAreas: "/businesses",
+  getBusinessAreasDetail: (id: string) => `/businesses/${id}`,
+  getHistory: "/history-page",
+  getLeadership: "/leadership-page",
+  getOrganization: "/organization-page",
+  getVision: "/vision-page",
+  getHomepage: "/home-page",
+  getPolicy: "/policy-page",
+  getTerms: "/terms-page",
+  getAbout: "/about",
+  PostMessage : "/messages",
+};
