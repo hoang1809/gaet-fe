@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "../common/Container";
 import { Feather } from "lucide-react";
-import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 
 type Props = {

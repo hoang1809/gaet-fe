@@ -1,6 +1,7 @@
 "use client";
 import Loading from "@/components/common/Loading";
 import AboutSection from "@/components/homepage/AboutSection";
+import BannerSection from "@/components/homepage/BannerSection";
 import BusinessSection from "@/components/homepage/BusinessSection";
 import HeroSection from "@/components/homepage/HeroSection";
 import NewsSection from "@/components/homepage/NewsSection";
@@ -28,6 +29,7 @@ export default function Home() {
       <BusinessSection description={data.data.business_description}/>
       <PartnerSection description={data.data.partner_description}/>
       <NewsSection/>
+      <BannerSection banners={data.data.banners}/>
     </>
   );
 }

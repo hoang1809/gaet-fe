@@ -32,6 +32,12 @@ interface Feature {
   description: string;
 }
 
+interface Banner {
+  id: number;
+  image: Image;
+  url: string;
+}
+
 interface Home {
   id: number;
   documentId: string;
@@ -44,4 +50,5 @@ interface Home {
   video: Video;
   partners: Partner[];
   features: Feature[];
+  banners: Banner[];
 }

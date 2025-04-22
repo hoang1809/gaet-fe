@@ -107,7 +107,7 @@ export const fetchVisionPage = async (): Promise<{ data: Vision }> => {
 export const fetchHomePage = async (): Promise<{ data: Home }> => {
   const response = await axiosClient.get(endpoints.getHomepage, {
     params: {
-      populate: ["video", "features"],
+      populate: ["video", "features", "banners.image"],
     },
   });
   return response.data;
