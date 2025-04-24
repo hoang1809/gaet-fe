@@ -8,6 +8,7 @@ export const vi = {
   header_vision: "Tầm nhìn và chiến lược",
   header_organization: "Sơ đồ tổ chức",
   header_leadership: "Ban lãnh đạo",
+  header_gallery: "Thư viện",
 
   footer_send_message: "Gửi tin nhắn",
   footer_sending: "Đang gửi...",
@@ -23,21 +24,22 @@ export const vi = {
   footer_terms: "Điều khoản sử dụng",
   footer_sitemap: "Sơ đồ trang",
 
-  homepage_company_name: "TỔNG CÔNG TY KINH TẾ KỸ THUẬT CÔNG NGHIỆP QUỐC PHÒNG",
+  homepage_company_name_line1: "TỔNG CÔNG TY KINH TẾ KỸ THUẬT",
+  homepage_company_name_line2: "CÔNG NGHIỆP QUỐC PHÒNG",
   homepage_slogan: "LẤY TÍN TẠO TẦM",
   homepage_description:
     "Doanh nghiệp quốc phòng, luôn đi đầu trong lĩnh vực chuyển giao công nghệ và xuất khẩu hàng công nghiệp quốc phòng.",
   homepage_learn_more: "Tìm hiểu thêm",
   homepage_contact_now: "Liên hệ ngay",
   homepage_about_us: "Về chúng tôi",
-  homepage_about_us_description:
-    "Tổng Công Ty Kinh Tế Kỹ Thuật Công Nghiệp Quốc Phòng",
+  homepage_about_us_description_line1: "TỔNG CÔNG TY KINH TẾ KỸ THUẬT",
+  homepage_about_us_description_line2: "CÔNG NGHIỆP QUỐC PHÒNG",
   homepage_years_of_experience: "Năm kinh nghiệm",
   homepage_subsidiaries: "Đơn vị thành viên",
   homepage_partner_countries: "Đối tác",
   homepage_personnel: "Nhân sự",
-  homepage_business_area: "Lĩnh Vực Hoạt Động",
-  homepage_strategic_partners: "Đối Tác Chiến Lược",
+  homepage_business_area: "LĨNH VỰC HOẠT ĐỘNG",
+  homepage_strategic_partners: "ĐỐI TÁC CHIẾN LƯỢC",
   homepage_view_all_partners: "Xem tất cả đối tác",
   homepage_news_and_events: "Tin tức & Sự kiện",
   homepage_news: "Tin tức mới nhất",
@@ -61,18 +63,20 @@ export const vi = {
   organization_subsidiary_companies: "Công ty con trực thuộc",
   organization_representative_offices: "Văn phòng đại diện",
 
-  leadership_board_of_members_and_executive_management: 'Hội đồng thành viên và Ban Tổng Giám đốc',
+  leadership_board_of_members_and_executive_management:
+    "Hội đồng thành viên và Ban Tổng Giám đốc",
 
   business_overview: "Tổng quan",
   business_main_activities: "Hoạt động chính",
   business_activities_image: "Hình ảnh hoạt động",
-  business_interested: 'Quan tâm đến lĩnh vực này?',
-  business_contact_us: 'Hãy liên hệ với chúng tôi để được tư vấn chi tiết và hỗ trợ tốt nhất.',
-  business_images: 'Hình ảnh',
-  business_related_areas: 'Lĩnh vực liên quan',
-  business_back_to_home: 'Quay lại trang chủ',
-  business_notable_projects: 'Các dự án tiêu biểu',
-  business_our_commitment: 'Cam kết của chúng tôi',
+  business_interested: "Quan tâm đến lĩnh vực này?",
+  business_contact_us:
+    "Hãy liên hệ với chúng tôi để được tư vấn chi tiết và hỗ trợ tốt nhất.",
+  business_images: "Hình ảnh",
+  business_related_areas: "Lĩnh vực liên quan",
+  business_back_to_home: "Quay lại trang chủ",
+  business_notable_projects: "Các dự án tiêu biểu",
+  business_our_commitment: "Cam kết của chúng tôi",
 
   about_introduction: "Giới thiệu",
   about_gaet_headquarters: "Trụ sở GAET",
@@ -80,4 +84,5 @@ export const vi = {
   about_address: "Địa chỉ",
   about_phone: "Số điện thoại",
 
+  gallery_title: "Thư viện",
 };

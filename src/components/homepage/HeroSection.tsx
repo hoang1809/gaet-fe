@@ -17,7 +17,7 @@ const HeroSection = ({ videoUrl }: Props) => {
         muted
         loop
         playsInline
-        className="w-full h-full lg:h-screen object-cover brightness-50 "
+        className="w-full h-full h-screen object-cover brightness-50 "
         poster="/assets/images/hero-poster.jpg"
       >
         <source
@@ -35,10 +35,13 @@ const HeroSection = ({ videoUrl }: Props) => {
 
       <div className="absolute inset-0 flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8 inline-block">
-            <span className="text-white bg-gaet-500/80 backdrop-blur-sm text-lg font-bold px-5 py-2.5 rounded-full">
-              {t("homepage_company_name")}
-            </span>
+          <div className="mb-8 text-white bg-gaet-500/80 backdrop-blur-sm text-lg font-bold px-5 py-2.5 rounded-full ">
+            <div>
+              {t("homepage_company_name_line1")}
+            </div>
+            <div>
+              {t("homepage_company_name_line2")}
+            </div>
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-slide-down animate-delay-100">

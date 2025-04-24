@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
     return <div>No data available</div>;
   }
   return (
-    <footer className="bg-gray-900 text-white pt-16 pb-8">
+    <footer id="footer" className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           <div id="contact">
@@ -181,6 +181,12 @@ const Footer: React.FC = () => {
                   className="text-gray-400 hover:text-white text-sm transition-colors block"
                 >
                   {t('header_member_units')}
+                </Link>
+                <Link
+                  href="gallery"
+                  className="text-gray-400 hover:text-white text-sm transition-colors block"
+                >
+                  {t('gallery_title')}
                 </Link>
               </div>
             </div>

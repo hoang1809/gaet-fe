@@ -2,6 +2,7 @@ import { endpoints } from "@/api/apiEndpoints";
 import axiosClient from "@/api/axiosClient";
 import { BusinessDetail, NewsDetail } from "@/types";
 import { About } from "@/types/about.interface";
+import { Gallery } from "@/types/gallery.interface";
 import { Leadership } from "@/types/leadership.interface";
 import { Policy, Terms } from "@/types/policy.interface copy";
 
@@ -148,4 +149,24 @@ export const fetchPartners = async (): Promise<{ data: Partner[] }> => {
   });
   return response.data;
 };
+
+export const fetchGallery = async (): Promise<{ data: Gallery[] }> => {
+  const response = await axiosClient.get(endpoints.getGallery, {
+    params: {
+      populate: "*",
+    },
+  });
+  return response.data;
+};
+
+export const fetchGalleryDetail = async (
+  id: string
+): Promise<{ data: Gallery }> => {
+  const response = await axiosClient.get(endpoints.getGalleryDetail(id), {
+    params: {
+      populate: "*",
+    },
+  });
+  return response.data;
+}
 

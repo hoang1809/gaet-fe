@@ -1,21 +1,14 @@
 "use client";
+import Container from "@/components/common/Container";
 import InfoCard from "@/components/common/InfoCard";
 import Loading from "@/components/common/Loading";
-import Container from "@/components/common/Container";
-import { useFetchNews } from "@/hooks/useFetchNews";
+import { useFetchGallery } from "@/hooks/useFetchGallery";
 import { getStrapiMedia } from "@/utils";
-import { useQuery } from "@tanstack/react-query";
-import dayjs from "dayjs";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 import { useTranslation } from "react-i18next";
 
 const NewsPage = () => {
-    const {t} = useTranslation();
-  
-  const { isLoading, error, data } = useFetchNews();
+  const {t} = useTranslation();
+  const { isLoading, error, data } = useFetchGallery();
 
   if (isLoading) {
     return <Loading />;
@@ -34,7 +27,7 @@ const NewsPage = () => {
       <div className="bg-gaet-700 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-white text-center">
-            {t('header_news')}
+            {t('gallery_title')}
           </h1>
         </div>
       </div>
@@ -45,11 +38,9 @@ const NewsPage = () => {
               key={item.documentId}
               title={item.title}
               id={item.documentId}
-              tag={item.tags[0]?.name}
               createdAt={item.createdAt}
               image={getStrapiMedia(item.cover.url)}
-              description={item.description}
-              detailPath="news"
+              detailPath="gallery"
             />
           ))}
         </div>

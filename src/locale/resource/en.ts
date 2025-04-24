@@ -8,6 +8,7 @@ export const en = {
   header_vision: "Vision and Strategy",
   header_organization: "Organization Chart",
   header_leadership: "Leadership",
+  header_gallery: "Gallery",
 
   footer_send_message: "Send Message",
   footer_sending: "Sending...",
@@ -23,28 +24,28 @@ export const en = {
   footer_terms: "Terms of Use",
   footer_sitemap: "Sitemap",
 
-  homepage_company_name:
-    "GENERAL CORPORATION FOR ECONOMICS AND ENGINEERING TECHNOLOGY",
+  homepage_company_name_line1: "DEFENCE ECONOMIC TECHNICAL",
+  homepage_company_name_line2: "INDUSTRY CORPORATION",
   homepage_slogan: "BUILD STATURE BY TRUST",
   homepage_description:
     "Defense enterprise, always leading in technology transfer and export of defense industry products.",
   homepage_learn_more: "Learn more",
   homepage_contact_now: "Contact now",
   homepage_about_us: "About us",
-  homepage_about_us_description:
-    "General Corporation for Economics and Engineering Technology",
+  homepage_about_us_description_line1: "DEFENCE ECONOMIC TECHNICAL",
+  homepage_about_us_description_line2: "INDUSTRY CORPORATION",
   homepage_years_of_experience: "Years of experience",
   homepage_subsidiaries: "Subsidiaries",
   homepage_partner_countries: "Partner countries",
   homepage_personnel: "Personnel",
-  homepage_business_area: "Business Areas",
-  homepage_strategic_partners: "Strategic Partners",
+  homepage_business_area: "BUSINESS AREAS",
+  homepage_strategic_partners: "STRATEGIC PARTNERS",
   homepage_view_all_partners: "View all partners",
   homepage_news_and_events: "News & Events",
   homepage_news: "Latest News",
   homepage_view_all_news: "View all news",
 
-  history_title: 'Our History',
+  history_title: "Our History",
   history_development: "History of Development",
   history_notable_chievements: "Notable Achievements",
 
@@ -62,18 +63,20 @@ export const en = {
   organization_subsidiary_companies: "Subsidiary Companies",
   organization_representative_offices: "Representative Offices",
 
-  leadership_board_of_members_and_executive_management: ' Board of Members and Executive Management',
+  leadership_board_of_members_and_executive_management:
+    " Board of Members and Executive Management",
 
   business_overview: "Overview",
   business_main_activities: "Main Activities",
   business_activities_image: "Activities Images",
-  business_interested: 'Interested in this business area?',
-  business_contact_us: 'Contact us for detailed consultation and the best support.',
-  business_images: 'Images',
-  business_related_areas: 'Related Areas',
-  business_back_to_home: 'Back to home',
-  business_notable_projects: 'Notable Projects',
-  business_our_commitment: 'Our Commitment',
+  business_interested: "Interested in this business area?",
+  business_contact_us:
+    "Contact us for detailed consultation and the best support.",
+  business_images: "Images",
+  business_related_areas: "Related Areas",
+  business_back_to_home: "Back to home",
+  business_notable_projects: "Notable Projects",
+  business_our_commitment: "Our Commitment",
 
   about_introduction: "About Us",
   about_gaet_headquarters: "GAET Headquarters",
@@ -81,4 +84,5 @@ export const en = {
   about_address: "Address",
   about_phone: "Phone number",
 
+  gallery_title: "Gallery",
 };

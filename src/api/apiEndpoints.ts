@@ -15,4 +15,6 @@ export const endpoints = {
   getAbout: "/about",
   getPartners: "/partners",
   PostMessage : "/messages",
+  getGallery: "/galleries",
+  getGalleryDetail: (id: string) => `/galleries/${id}`,
 };

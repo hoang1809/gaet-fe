@@ -42,6 +42,7 @@ const HeaderNavigationMenu = () => {
           : [],
     },
     { label: t("header_news"), href: "/news" },
+    { label: t("header_gallery"), href: "/gallery" },
     { label: t("header_member_units"), href: "/subsidiaries" },
   ];
 

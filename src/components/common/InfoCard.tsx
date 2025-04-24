@@ -10,7 +10,7 @@ type Props = {
   image?: string;
   createdAt?: string;
   title: string;
-  description: string;
+  description?: string;
   detailPath?: string;
   
 };

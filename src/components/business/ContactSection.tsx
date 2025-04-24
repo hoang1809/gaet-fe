@@ -2,6 +2,7 @@ import React from "react";
 import Container from "../common/Container";
 import { Button } from "../ui/button";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 const ContactSection = () => {
   const {t} = useTranslation();
@@ -15,9 +16,10 @@ const ContactSection = () => {
           <p className="text-white/80 mb-8 max-w-lg mx-auto">
             {t('business_contact_us')}
           </p>
-          <Button className="bg-white text-gaet-700 hover:bg-gaet-50">
+          <Link href="#footer"><Button className="bg-white text-gaet-700 hover:bg-gaet-50">
             {t('homepage_contact_now')}
-          </Button>
+          </Button></Link>
+          
         </div>
       </Container>
     </div>

@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Container from "../common/Container";
 import HeaderNavigationMenu from "./HeaderNavigationMenu";
+import { HeaderMenuMoile } from "./HeaderMenuMoile";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -38,7 +39,7 @@ const Header = () => {
     >
       <Container
         className={`flex items-center justify-between space-y-0 gap-6 ${
-          isHomePage ? (scrolled ? "py-2" : "py-6") : "py-2"
+          isHomePage ? (scrolled ? "py-6" : "py-6") : "py-4"
         }`}
       >
         <Link href="/">
@@ -56,7 +57,13 @@ const Header = () => {
           />
         </Link>
 
-        <HeaderNavigationMenu />
+        <div className="hidden lg:block">
+          <HeaderNavigationMenu />
+        </div>
+
+        <div className="lg:hidden">
+          <HeaderMenuMoile />
+        </div>
       </Container>
     </div>
   );
