@@ -86,6 +86,11 @@ export const en = {
   about_phone: "Phone number",
 
   gallery_title: "Gallery",
+  gallery_filter_all: "All",
+  gallery_filter_image: "Image",
+  gallery_filter_video: "Video",
+  gallery_filter_file: "File",
+
 
   subsidiary_function: "Main Business Function",
   subsidiary_address: "Address",

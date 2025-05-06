@@ -15,6 +15,8 @@ import Loading from "@/components/common/Loading";
 import { useTranslation } from "react-i18next";
 import { useFetchGalleryDetail } from "@/hooks/useFetchGalleryDetail";
 import { getStrapiMedia } from "@/utils";
+import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
+import "@cyntler/react-doc-viewer/dist/index.css";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -63,7 +65,7 @@ const GalleryDetailPage = ({ params }: Props) => {
                 className="w-full h-auto"
               />
             );
-          } else {
+          } else if (data.data.type === "video") {
             const video = item as unknown as Video;
             return (
               <video key={video.id} controls className="w-full h-auto">
@@ -71,6 +73,13 @@ const GalleryDetailPage = ({ params }: Props) => {
                 Your browser does not support the video tag.
               </video>
             );
+          } else if (data.data.type === "file") {
+            const docs = [{uri: getStrapiMedia(item.url)}];
+            // data.data.media.map((item) => {
+            //   return {
+            //     uri: getStrapiMedia(item.url),
+            //   }})
+            return <DocViewer key={item.id} documents={docs} pluginRenderers={DocViewerRenderers} />;
           }
         })}
       </div>

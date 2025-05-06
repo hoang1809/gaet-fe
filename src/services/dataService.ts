@@ -150,10 +150,17 @@ export const fetchPartners = async (): Promise<{ data: Partner[] }> => {
   return response.data;
 };
 
-export const fetchGallery = async (): Promise<{ data: Gallery[] }> => {
+export const fetchGallery = async (
+  filter?: string
+): Promise<{ data: Gallery[] }> => {
   const response = await axiosClient.get(endpoints.getGallery, {
     params: {
       populate: "*",
+      filters: {
+        type: {
+          $eq: filter,
+        },
+      },
     },
   });
   return response.data;
@@ -168,5 +175,4 @@ export const fetchGalleryDetail = async (
     },
   });
   return response.data;
-}
-
+};

@@ -1,9 +1,9 @@
 import { fetchGallery } from "@/services/dataService";
 import { useQuery } from "@tanstack/react-query";
 
-export const useFetchGallery = () => {
+export const useFetchGallery = (filter?:string) => {
     return useQuery({
-      queryKey: ['gallery'],
-      queryFn: fetchGallery,
+      queryKey: ['gallery', filter],
+      queryFn: () => fetchGallery(filter),
     });
   };

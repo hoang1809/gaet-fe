@@ -86,6 +86,10 @@ export const vi = {
   about_phone: "Số điện thoại",
 
   gallery_title: "Thư viện",
+  gallery_filter_all: "Tất cả",
+  gallery_filter_image: "Hình ảnh",
+  gallery_filter_video: "Video",
+  gallery_filter_file: "Tài liệu",
 
   subsidiary_function: "Chức năng kinh doanh chính",
   subsidiary_address: "Địa chỉ",
