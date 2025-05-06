@@ -33,7 +33,7 @@ const HistoryPage = () => {
           <h2 className="text-3xl font-bold text-gaet-800 mb-6">
             {t('history_development')}
           </h2>
-          <p className="text-lg">{data.data.history_of_development}</p>
+          <p className="text-lg text-justify">{data.data.history_of_development}</p>
         </div>
       </Container>
       <Container className="pb-6">

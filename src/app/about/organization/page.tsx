@@ -30,15 +30,12 @@ const OrganizationPage = () => {
       </div>
       <Container className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl space-y-12 pb-0">
         <div className="mx-auto max-w-[65ch]">
-          <h2 className="text-3xl font-bold text-gaet-800 mb-6">
-            {t("organization_board_of_members")}
-          </h2>
           <p className="text-lg">{data.data.description}</p>
         </div>
         <div>
           <div className="bg-gaet-600 text-white rounded-t-lg p-4 flex justify-center items-center">
             <div className="text-xl font-bold px-6 py-3 border-2 border-white rounded-lg">
-              {t("organization_general_director")}
+              {t("organization_chairman")}
             </div>
           </div>
           <div className="bg-gaet-500 text-white p-4 flex justify-center items-center">

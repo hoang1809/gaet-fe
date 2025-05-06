@@ -57,6 +57,7 @@ export const en = {
 
   organization_structure: "Organization Structure",
   organization_board_of_members: "Board of Members",
+  organization_chairman: "Chairman",
   organization_general_director: "General Director",
   organization_deputy_general_directors: "Deputy General Directors",
   organization_directly_affiliated_agencies: "Directly Affiliated Agencies",
@@ -85,4 +86,10 @@ export const en = {
   about_phone: "Phone number",
 
   gallery_title: "Gallery",
+
+  subsidiary_function: "Main Business Function",
+  subsidiary_address: "Address",
+  subsidiary_phone: "Phone",
+  subsidiary_contact_info: "Contact Information",
+  subsidiary_about: "About",
 };

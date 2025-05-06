@@ -1,14 +1,12 @@
 "use client";
 import Container from "@/components/common/Container";
-import { Button } from "@/components/ui/button";
-import { BlocksRenderer } from "@strapi/blocks-react-renderer";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import React, { use } from "react";
-import Image from "next/image";
+import Loading from "@/components/common/Loading";
 import { useFetchMemberDetail } from "@/hooks/useFetchMemberDetail";
 import { getStrapiMedia } from "@/utils/getStrapiMedia";
-import Loading from "@/components/common/Loading";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import Image from "next/image";
+import { use } from "react";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -16,6 +14,7 @@ type Props = {
 
 const SubsidiaryDetailPage = ({ params }: Props) => {
   const { id } = use(params);
+  const { t } = useTranslation();
 
   const { isLoading, error, data } = useFetchMemberDetail(id);
 
@@ -56,20 +55,20 @@ const SubsidiaryDetailPage = ({ params }: Props) => {
 
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                  Thông tin liên hệ
+                  {t("subsidiary_contact_info")}
                 </h3>
 
                 <div className="space-y-4">
                   <div>
                     <h4 className="text-md font-medium text-gray-700 mb-1">
-                      Địa chỉ
+                      {t("subsidiary_address")}
                     </h4>
                     <p className="text-gray-600">{data.data.address}</p>
                   </div>
 
                   <div>
                     <h4 className="text-md font-medium text-gray-700 mb-1">
-                      Điện thoại
+                      {t("subsidiary_phone")}
                     </h4>
                     <ul className="space-y-1">
                       <li className="text-gray-600">
@@ -92,7 +91,7 @@ const SubsidiaryDetailPage = ({ params }: Props) => {
                     </div>
                   )}
 
-                  {data.email && (
+                  {data.data.email && (
                     <div>
                       <h4 className="text-md font-medium text-gray-700 mb-1">
                         Email:
@@ -133,7 +132,7 @@ const SubsidiaryDetailPage = ({ params }: Props) => {
           <div className="lg:col-span-2">
             <div className="rounded-xl overflow-hidden shadow-md bg-white p-8">
               <h2 className="text-2xl font-bold mb-6 text-gray-900 border-b pb-4 border-gray-200">
-                Chức năng kinh doanh chính
+                {t("subsidiary_function")}
               </h2>
 
               <BlocksRenderer
@@ -161,7 +160,7 @@ const SubsidiaryDetailPage = ({ params }: Props) => {
 
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <h3 className="text-xl font-semibold mb-4 text-gray-900">
-                  Giới thiệu
+                  {t("subsidiary_about")}
                 </h3>
 
                 <p className="text-gray-700 mb-4">{data.data.description}</p>

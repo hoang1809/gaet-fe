@@ -32,9 +32,6 @@ const LeadershipPage = () => {
       </div>
       <Container className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <div className="mx-auto max-w-[65ch]">
-          <h2 className="text-3xl font-bold text-gaet-800 mb-6">
-            {t("leadership_board_of_members_and_executive_management")}
-          </h2>
           <p className="text-lg">{data.data.description}</p>
         </div>
       </Container>

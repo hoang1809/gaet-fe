@@ -65,7 +65,7 @@ const NewsDetailPage = ({ params }: Props) => {
             );
           },
           paragraph: ({ children }) => {
-            return <p className="text-lg">{children}</p>;
+            return <p className="text-lg text-justify">{children}</p>;
           },
         }}
       />

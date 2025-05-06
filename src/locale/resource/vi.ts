@@ -57,6 +57,7 @@ export const vi = {
 
   organization_structure: "Cơ cấu tổ chức",
   organization_board_of_members: "Hội đồng thành viên",
+  organization_chairman: "Chủ tịch",
   organization_general_director: "Tổng giám đốc",
   organization_deputy_general_directors: "Các phó tổng giám đốc",
   organization_directly_affiliated_agencies: "Cơ quan trực thuộc",
@@ -85,4 +86,10 @@ export const vi = {
   about_phone: "Số điện thoại",
 
   gallery_title: "Thư viện",
+
+  subsidiary_function: "Chức năng kinh doanh chính",
+  subsidiary_address: "Địa chỉ",
+  subsidiary_phone: "Điện thoại",
+  subsidiary_contact_info: "Thông tin liên hệ",
+  subsidiary_about: "Giới thiệu",
 };
