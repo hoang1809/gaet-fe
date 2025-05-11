@@ -17,7 +17,7 @@ const HeroSection = ({ videoUrl }: Props) => {
         muted
         loop
         playsInline
-        className="w-full h-full h-screen object-cover brightness-50 "
+        className="w-full h-screen object-cover brightness-50 "
         poster="/assets/images/hero-poster.jpg"
       >
         <source
