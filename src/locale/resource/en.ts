@@ -91,10 +91,14 @@ export const en = {
   gallery_filter_video: "Video",
   gallery_filter_file: "File",
 
-
   subsidiary_function: "Main Business Function",
   subsidiary_address: "Address",
   subsidiary_phone: "Phone",
   subsidiary_contact_info: "Contact Information",
   subsidiary_about: "About",
+  subsidiary_description:
+    "GAET has a system of member units operating in many different fields, from industrial production to trade and services.",
+  subsidiary_title: "Subsidiaries",
+
+  common_see_details: "See detail →",
 };

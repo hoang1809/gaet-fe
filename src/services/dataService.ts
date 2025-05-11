@@ -2,9 +2,9 @@ import { endpoints } from "@/api/apiEndpoints";
 import axiosClient from "@/api/axiosClient";
 import { BusinessDetail, NewsDetail } from "@/types";
 import { About } from "@/types/about.interface";
-import { Gallery } from "@/types/gallery.interface";
 import { Leadership } from "@/types/leadership.interface";
-import { Policy, Terms } from "@/types/policy.interface copy";
+import { Policy, Terms } from "@/types/policy.interface";
+import { Subsidiary } from "@/types/subsidiary.interface";
 
 export const fetchNews = async (): Promise<{ data: NewsDetail[] }> => {
   const response = await axiosClient.get(endpoints.getNewsList, {
@@ -27,7 +27,9 @@ export const fetchNewsDetail = async (
   return response.data;
 };
 
-export const fetchMembers = async () => {
+export const fetchMembers = async (): Promise<{
+  data: Subsidiary[];
+}> => {
   const response = await axiosClient.get(endpoints.getMembers, {
     params: {
       populate: "*",
@@ -36,7 +38,11 @@ export const fetchMembers = async () => {
   return response.data;
 };
 
-export const fetchMembersDetail = async (id: string) => {
+export const fetchMembersDetail = async (
+  id: string
+): Promise<{
+  data: Subsidiary;
+}> => {
   const response = await axiosClient.get(endpoints.getMembersDetail(id), {
     params: {
       populate: "*",

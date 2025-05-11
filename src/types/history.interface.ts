@@ -14,11 +14,11 @@ interface Achievement {
 
 interface History {
   id: number;
-  documentId: string;
-  history_of_development: string;
+  attributes:{history_of_development: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
   achievements: Achievement[];
-  milestones: Milestone[];
+  milestones: Milestone[];}
+  
 }

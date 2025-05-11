@@ -96,4 +96,9 @@ export const vi = {
   subsidiary_phone: "Điện thoại",
   subsidiary_contact_info: "Thông tin liên hệ",
   subsidiary_about: "Giới thiệu",
+  subsidiary_description:
+    "GAET có một hệ thống các đơn vị thành viên hoạt động trong nhiều lĩnh vực khác nhau, từ sản xuất công nghiệp đến thương mại và dịch vụ.",
+  subsidiary_title: "Đơn vị thành viên",
+
+  common_see_details: "Xem chi tiết →"
 };

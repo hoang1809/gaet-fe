@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Container from "../common/Container";
 import HeaderNavigationMenu from "./HeaderNavigationMenu";
-import { HeaderMenuMoile } from "./HeaderMenuMoile";
+import { HeaderMenuMoile } from "./HeaderMenuMobile";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);

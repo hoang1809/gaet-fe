@@ -43,19 +43,19 @@ const NewsDetailPage = ({ params }: Props) => {
           {t('business_back_to_home')}
         </Button>
       </Link>
-      <div className="text-3xl md:text-4xl font-bold">{data.data.title}</div>
+      <div className="text-3xl md:text-4xl font-bold">{data.data.attributes.title}</div>
       <div className="flex flex-wrap gap-3 text-sm text-gray-600">
         <div className="flex items-center">
           <Calendar className="h-4 w-4 mr-1" />
-          {dayjs(data.data.createdAt).format("DD/MM/YYYY")}
+          {dayjs(data.data.attributes.createdAt).format("DD/MM/YYYY")}
         </div>
         <div className="flex items-center">
           <Tag className="h-4 w-4 mr-1" />
-          {data.data.tags.map((tag: any) => tag.name).join("; ")}
+          {data.data.attributes.tags.data.map((tag) => tag.attributes.name).join("; ")}
         </div>
       </div>
       <BlocksRenderer
-        content={data.data.content}
+        content={data.data.attributes.content}
         blocks={{
           image: ({ image }) => {
             return (

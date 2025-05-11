@@ -1,26 +1,79 @@
-type BaseMedia = {
-  id: string;
+type MediaType = 'image' | 'video' | 'file';
+interface Format {
+  ext: string;
   url: string;
-  // Add common media fields here
-};
+  hash: string;
+  mime: string;
+  name: string;
+  path: string | null;
+  size: number;
+  width: number;
+  height: number;
+  sizeInBytes: number;
+}
 
-export type Image = BaseMedia & {
-  format: "jpeg" | "png" | "webp"; // example formats
-};
-
-export type Video = BaseMedia & {
-  duration: number;
-  format: "mp4" | "webm"; // example formats
-};
-
-export type Gallery<T extends "image" | "video" = "image" | "video"> = {
-  id: number;
-  documentId: string;
-  title: string;
-  type: T;
-  media: T extends "image" ? Image[] : Video[];
+interface MediaAttributes {
+  name: string;
+  alternativeText: string | null;
+  caption: string | null;
+  width: number | null;
+  height: number | null;
+  formats: {
+    large?: Format;
+    small?: Format;
+    medium?: Format;
+    thumbnail?: Format;
+  } | null;
+  hash: string;
+  ext: string;
+  mime: string;
+  size: number;
+  url: string;
+  previewUrl: string | null;
+  provider: string;
+  provider_metadata: string | null;
   createdAt: string;
   updatedAt: string;
-  publishedAt: string;
-  cover: Image;
-};
+}
+
+interface Media {
+  id: number;
+  attributes: MediaAttributes;
+}
+
+interface Cover {
+  data: Media;
+}
+
+interface LocalizationAttributes {
+  title: string;
+  type: string;
+  createdAt: string;
+  updatedAt: string;
+  locale: string;
+}
+
+interface Localization {
+  id: number;
+  attributes: LocalizationAttributes;
+}
+
+interface Attributes {
+  title: string;
+  type: MediaType;
+  createdAt: string;
+  updatedAt: string;
+  locale: string;
+  cover: Cover;
+  media: {
+    data: Media[];
+  };
+  localizations: {
+    data: Localization[];
+  };
+}
+
+interface Gallery {
+  id: number;
+  attributes: Attributes;
+}

@@ -38,6 +38,7 @@ const PartnerSection = ({ description }: Props) => {
       container.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
+
   return (
     <div className="bg-white">
       <Container>
@@ -70,8 +71,8 @@ const PartnerSection = ({ description }: Props) => {
                 <div className="h-24 relative w-full flex items-center justify-center mb-4">
                   <Image
                     src={
-                      partner.logo?.url
-                        ? getStrapiMedia(partner.logo?.url)
+                      partner.attributes.logo?.data?.attributes?.url
+                        ? getStrapiMedia(partner.attributes.logo?.data?.attributes?.url)
                         : "/"
                     }
                     alt=""
@@ -80,7 +81,7 @@ const PartnerSection = ({ description }: Props) => {
                   />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900">
-                  {partner.name}
+                  {partner.attributes.name}
                 </h3>
               </div>
             ))}

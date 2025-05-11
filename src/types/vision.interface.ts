@@ -11,12 +11,13 @@ interface Objective {
 
 interface Vision {
   id: number;
-  documentId: string;
-  vision: string;
-  mission: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  core_values: CoreValue[];
-  objectives: Objective[];
+  attributes: {
+    vision: string;
+    mission: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    core_values: CoreValue[];
+    objectives: Objective[];
+  };
 }

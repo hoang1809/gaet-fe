@@ -32,12 +32,12 @@ const LeadershipPage = () => {
       </div>
       <Container className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <div className="mx-auto max-w-[65ch]">
-          <p className="text-lg">{data.data.description}</p>
+          <p className="text-lg">{data.data.attributes.description}</p>
         </div>
       </Container>
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {data.data.leaders.map((leader, index) => (
+          {data.data.attributes.leaders.map((leader, index) => (
             <div
               key={index}
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg"
@@ -45,7 +45,11 @@ const LeadershipPage = () => {
               <div className="h-64 relative overflow-hidden bg-gray-100">
                 <div className="w-full h-full flex items-center justify-center">
                   <Image
-                    src={leader.image ? getStrapiMedia(leader.image.url) : "/"}
+                    src={
+                      leader.image
+                        ? getStrapiMedia(leader.image.data.attributes.url)
+                        : "/"
+                    }
                     fill
                     alt=""
                     objectFit="cover"
@@ -79,7 +83,7 @@ const LeadershipPage = () => {
           <h2 className="text-3xl font-bold text-gaet-800 mb-6">
             {t("organization_structure")}
           </h2>
-          <p className="text-lg">{data.data.description}</p>
+          <p className="text-lg">{data.data.attributes.description}</p>
         </div>
       </Container>
     </>

@@ -18,7 +18,7 @@ const BannerSection = ({ banners }: Props) => {
               className="relative w-full aspect-video rounded-lg overflow-hidden"
             >
               <Image
-                src={getStrapiMedia(banner.image.url)}
+                src={getStrapiMedia(banner.image.data.attributes.url)}
                 fill
                 alt=""
                 objectFit="fill"

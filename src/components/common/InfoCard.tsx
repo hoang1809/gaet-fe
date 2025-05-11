@@ -3,19 +3,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import dayjs from "dayjs";
+import { useTranslation } from "react-i18next";
 
 type Props = {
-  id: string;
   tag?: string;
   image?: string;
   createdAt?: string;
   title: string;
   description?: string;
-  detailPath?: string;
-  
+  url?: string;
 };
 
-const InfoCard = ({ id, tag, createdAt, image, title, description, detailPath }: Props) => {
+const InfoCard = ({
+  tag,
+  createdAt,
+  image,
+  title,
+  description,
+  url,
+}: Props) => {
+  const { t } = useTranslation();
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg">
       <div className="relative rounded-lg aspect-[424/256] w-full overflow-hidden">
@@ -30,19 +37,23 @@ const InfoCard = ({ id, tag, createdAt, image, title, description, detailPath }:
 
       <div className="p-6">
         {(tag || createdAt) && (
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-medium bg-gaet-50 text-gaet-700 px-2 py-1 rounded">
-                {tag}
-              </span>
-              <span className="text-xs text-gray-500">
-                {dayjs(createdAt).format("DD/MM/YYYY")}
-              </span>
-            </div>
-          )}
+          <div className="flex items-center justify-between mb-3">
+            <span
+              className={`text-xs font-medium bg-gaet-50 text-gaet-700 px-2 py-1 rounded ${
+                !tag && "invisible"
+              }`}
+            >
+              {tag}
+            </span>
+            <span className="text-xs text-gray-500">
+              {dayjs(createdAt).format("DD/MM/YYYY")}
+            </span>
+          </div>
+        )}
 
         <h3 className="text-lg font-semibold mb-3 text-gray-900 line-clamp-2">
           <Link
-            href={`${detailPath ? `/${detailPath}/${id}` : '#'}`}
+            href={url || "#"}
             className="hover:text-gaet-600 transition-colors"
           >
             {title}
@@ -52,14 +63,10 @@ const InfoCard = ({ id, tag, createdAt, image, title, description, detailPath }:
         <p className="text-gray-600 text-sm line-clamp-3 mb-4">{description}</p>
 
         <Link
-          href={`${detailPath ? `/${detailPath}/${id}` : '#'}`}
-          className="inline-flex items-center text-gaet-600 font-medium text-sm hover:text-gaet-800 transition-colors"
+          href={url || "#"}
+          className="text-gaet-600 font-medium text-sm hover:text-gaet-800 transition-colors"
         >
-          Đọc tiếp
-          <ArrowRight
-            size={16}
-            className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
-          />
+          {t("common_see_details")}
         </Link>
       </div>
     </div>

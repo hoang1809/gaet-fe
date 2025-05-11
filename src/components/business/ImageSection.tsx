@@ -23,7 +23,7 @@ const ImageSection = ({ images }: Props) => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
             {images.map((image, index) => (
               <div
-                key={image.hash}
+                key={image.attributes.hash}
                 className={`rounded-xl overflow-hidden w-full relative shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${
                   index % 3 === 0
                     ? "md:col-span-2 aspect-square md:aspect-[678/381]"
@@ -31,7 +31,7 @@ const ImageSection = ({ images }: Props) => {
                 }`}
               >
                 <Image
-                  src={getStrapiMedia(image.url)}
+                  src={getStrapiMedia(image.attributes.url)}
                   alt=""
                   fill
                   className="object-cover"

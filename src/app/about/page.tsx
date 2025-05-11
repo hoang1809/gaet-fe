@@ -39,13 +39,13 @@ const AboutPage = () => {
               <h2 className="text-2xl font-bold text-gaet-700 mb-6">
                 {t("business_overview")}
               </h2>
-              <p className="text-lg">{data.data.overview}</p>
+              <p className="text-lg">{data.data.attributes.overview}</p>
             </div>
           </div>
           <div className="lg:col-span-1">
             <div className="rounded-xl overflow-hidden shadow-lg bg-white border border-gray-200">
               <img
-                src={getStrapiMedia(data.data.image?.url)}
+                src={getStrapiMedia(data.data.attributes.image?.data.attributes.url)}
                 alt={t("about_gaet_headquarters")}
                 className="w-full h-56 object-cover"
               />
@@ -53,7 +53,7 @@ const AboutPage = () => {
                 <h3 className="font-semibold text-lg mb-2">
                   {t("about_headquarters")}
                 </h3>
-                <p className="text-gray-600">{data.data.address}</p>
+                <p className="text-gray-600">{data.data.attributes.address}</p>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@ const AboutPage = () => {
       </Container>
       <Container className="px-4 sm:px-6 lg:px-8 py-0 max-w-4xl">
       <BlocksRenderer
-        content={data.data.details}
+        content={data.data.attributes.details}
         blocks={{
           image: ({ image }) => {
             return (

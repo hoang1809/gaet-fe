@@ -24,12 +24,12 @@ export default function Home() {
 
   return (
     <>
-      <HeroSection videoUrl={data.data.video.url} />
-      <AboutSection description={data.data.description} features={data.data.features}/>
-      <BusinessSection description={data.data.business_description}/>
-      <PartnerSection description={data.data.partner_description}/>
+      <HeroSection videoUrl={data.data.attributes.video.data.attributes.url} />
+      <AboutSection description={data.data.attributes.description} features={data.data.attributes.features}/>
+      <BusinessSection description={data.data.attributes.business_description}/>
+      <PartnerSection description={data.data.attributes.partner_description}/>
       <NewsSection/>
-      <BannerSection banners={data.data.banners}/>
+      <BannerSection banners={data.data.attributes.banners}/>
     </>
   );
 }

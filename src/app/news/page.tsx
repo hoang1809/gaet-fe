@@ -1,20 +1,14 @@
 "use client";
+import Container from "@/components/common/Container";
 import InfoCard from "@/components/common/InfoCard";
 import Loading from "@/components/common/Loading";
-import Container from "@/components/common/Container";
 import { useFetchNews } from "@/hooks/useFetchNews";
 import { getStrapiMedia } from "@/utils";
-import { useQuery } from "@tanstack/react-query";
-import dayjs from "dayjs";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
 import { useTranslation } from "react-i18next";
 
 const NewsPage = () => {
-    const {t} = useTranslation();
-  
+  const { t } = useTranslation();
+
   const { isLoading, error, data } = useFetchNews();
 
   if (isLoading) {
@@ -34,7 +28,7 @@ const NewsPage = () => {
       <div className="bg-gaet-700 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-white text-center">
-            {t('header_news')}
+            {t("header_news")}
           </h1>
         </div>
       </div>
@@ -42,14 +36,13 @@ const NewsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {data.data.map((item) => (
             <InfoCard
-              key={item.documentId}
-              title={item.title}
-              id={item.documentId}
-              tag={item.tags[0]?.name}
-              createdAt={item.createdAt}
-              image={getStrapiMedia(item.cover.url)}
-              description={item.description}
-              detailPath="news"
+              key={item.id}
+              title={item.attributes.title}
+              tag={item.attributes.tags.data[0]?.attributes.name}
+              createdAt={item.attributes.createdAt}
+              image={getStrapiMedia(item.attributes.cover.data.attributes.url)}
+              description={item.attributes.description}
+              url={`/news/${item.id}`}
             />
           ))}
         </div>

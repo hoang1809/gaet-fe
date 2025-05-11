@@ -26,12 +26,16 @@ const SubsidiaryDetailPage = ({ params }: Props) => {
     return <div>An error occurred: {error.message}</div>;
   }
 
+  if (!data || !data.data) {
+    return <div>No data available</div>;
+  }
+
   return (
     <div>
       <div className="bg-gaet-700 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-white text-center">
-            {data.data.name}
+            {data.data.attributes.name}
           </h1>
         </div>
       </div>
@@ -42,8 +46,8 @@ const SubsidiaryDetailPage = ({ params }: Props) => {
               <div className="h-64 relative overflow-hidden">
                 <Image
                   src={
-                    data.data.image?.url
-                      ? getStrapiMedia(data.data.image.url)
+                    data.data.attributes.image?.data?.attributes?.url
+                      ? getStrapiMedia(data.data.attributes.image.data.attributes.url)
                       : "/"
                   }
                   className="border-0"
@@ -63,7 +67,7 @@ const SubsidiaryDetailPage = ({ params }: Props) => {
                     <h4 className="text-md font-medium text-gray-700 mb-1">
                       {t("subsidiary_address")}
                     </h4>
-                    <p className="text-gray-600">{data.data.address}</p>
+                    <p className="text-gray-600">{data.data.attributes.address}</p>
                   </div>
 
                   <div>
@@ -73,53 +77,53 @@ const SubsidiaryDetailPage = ({ params }: Props) => {
                     <ul className="space-y-1">
                       <li className="text-gray-600">
                         <a
-                          href={`tel:${data.data.phone_number}`}
+                          href={`tel:${data.data.attributes.phone_number}`}
                           className="hover:text-gaet-600 transition-colors duration-300"
                         >
-                          {data.data.phone_number}
+                          {data.data.attributes.phone_number}
                         </a>
                       </li>
                     </ul>
                   </div>
 
-                  {data.data.fax && (
+                  {data.data.attributes.fax && (
                     <div>
                       <h4 className="text-md font-medium text-gray-700 mb-1">
                         Fax:
                       </h4>
-                      <p className="text-gray-600">{data.data.fax}</p>
+                      <p className="text-gray-600">{data.data.attributes.fax}</p>
                     </div>
                   )}
 
-                  {data.data.email && (
+                  {data.data.attributes.email && (
                     <div>
                       <h4 className="text-md font-medium text-gray-700 mb-1">
                         Email:
                       </h4>
                       <p className="text-gray-600">
                         <a
-                          href={`mailto:${data.data.email}`}
+                          href={`mailto:${data.data.attributes.email}`}
                           className="hover:text-gaet-600 transition-colors duration-300"
                         >
-                          {data.data.email}
+                          {data.data.attributes.email}
                         </a>
                       </p>
                     </div>
                   )}
 
-                  {data.data.website && (
+                  {data.data.attributes.website && (
                     <div>
                       <h4 className="text-md font-medium text-gray-700 mb-1">
                         Website:
                       </h4>
                       <p className="text-gray-600">
                         <a
-                          href={`https://${data.data.website}`}
+                          href={`https://${data.data.attributes.website}`}
                           className="hover:text-gaet-600 transition-colors duration-300"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          {data.data.website}
+                          {data.data.attributes.website}
                         </a>
                       </p>
                     </div>
@@ -136,7 +140,7 @@ const SubsidiaryDetailPage = ({ params }: Props) => {
               </h2>
 
               <BlocksRenderer
-                content={data.data.functions}
+                content={data.data.attributes.functions}
                 blocks={{
                   image: ({ image }) => {
                     return (
@@ -163,7 +167,7 @@ const SubsidiaryDetailPage = ({ params }: Props) => {
                   {t("subsidiary_about")}
                 </h3>
 
-                <p className="text-gray-700 mb-4">{data.data.description}</p>
+                <p className="text-gray-700 mb-4">{data.data.attributes.description}</p>
               </div>
             </div>
           </div>

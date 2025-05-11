@@ -32,12 +32,11 @@ const HeaderNavigationMenu = () => {
     },
     {
       label: t("header_business"),
-      // Fetch business area dynamically, and map them to `business/[id]`
       subItems:
         !isLoading && data
           ? data.data.map((item) => ({
-              label: item.title,
-              href: `/business/${item.documentId}`, // Always go to /business/[id]
+              label: item.attributes.title,
+              href: `/business/${item.id}`,
             }))
           : [],
     },

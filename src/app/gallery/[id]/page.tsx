@@ -27,7 +27,6 @@ const GalleryDetailPage = ({ params }: Props) => {
   const { id } = use(params);
 
   const { isLoading, error, data } = useFetchGalleryDetail(id);
-  console.log(data);
 
   if (isLoading) {
     return <Loading />;
@@ -48,33 +47,33 @@ const GalleryDetailPage = ({ params }: Props) => {
           {t("business_back_to_home")}
         </Button>
       </Link>
-      <div className="text-3xl md:text-4xl font-bold">{data.data.title}</div>
+      <div className="text-3xl md:text-4xl font-bold">{data.data.attributes.title}</div>
       <div className="flex flex-wrap gap-3 text-sm text-gray-600">
         <div className="flex items-center">
           <Calendar className="h-4 w-4 mr-1" />
-          {dayjs(data.data.createdAt).format("DD/MM/YYYY")}
+          {dayjs(data.data.attributes.createdAt).format("DD/MM/YYYY")}
         </div>
-        {data.data.media.map((item) => {
-          if (data.data.type === "image") {
+        {data.data.attributes.media.data.map((item) => {
+          if (data.data.attributes.type === "image") {
             const image = item as unknown as Image;
             return (
               <img
-                key={image.hash}
-                src={getStrapiMedia(image.url)}
-                alt={data.data.title}
+                key={image.attributes.hash}
+                src={getStrapiMedia(image.attributes.url)}
+                alt={data.data.attributes.title}
                 className="w-full h-auto"
               />
             );
-          } else if (data.data.type === "video") {
+          } else if (data.data.attributes.type === "video") {
             const video = item as unknown as Video;
             return (
               <video key={video.id} controls className="w-full h-auto">
-                <source src={getStrapiMedia(video.url)} />
+                <source src={getStrapiMedia(video.attributes.url)} />
                 Your browser does not support the video tag.
               </video>
             );
-          } else if (data.data.type === "file") {
-            const docs = [{uri: getStrapiMedia(item.url)}];
+          } else if (data.data.attributes.type === "file") {
+            const docs = [{uri: getStrapiMedia(item.attributes.url)}];
             // data.data.media.map((item) => {
             //   return {
             //     uri: getStrapiMedia(item.url),

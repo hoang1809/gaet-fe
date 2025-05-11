@@ -36,12 +36,11 @@ const BusinessSection = ({ description }: Props) => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {data.data.map((item) => (
           <InfoCard
-            key={item.documentId}
-            title={item.title}
-            id={item.documentId}
-            image={getStrapiMedia(item.cover.url)}
-            description={item.general}
-            detailPath="business"
+            key={item.id}
+            title={item.attributes.title}
+            image={getStrapiMedia(item.attributes.cover.data.attributes.url)}
+            description={item.attributes.general}
+            url={`/business/${item.id}`}
           />
         ))}
       </div>

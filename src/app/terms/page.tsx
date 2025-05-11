@@ -4,9 +4,11 @@ import Loading from "@/components/common/Loading";
 import { useFetchTermsPage } from "@/hooks/useFetchTermsPage";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 const TermsPage = () => {
   const { isLoading, error, data } = useFetchTermsPage();
+  const { t } = useTranslation();
 
   if (isLoading) {
     return <Loading />;
@@ -24,18 +26,18 @@ const TermsPage = () => {
       <div className="bg-gaet-700 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-white text-center">
-          Điều khoản sử dụng
+            {t("footer_terms")}
           </h1>
         </div>
       </div>
       <Container className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <div className="mx-auto">
           <h2 className="text-3xl font-bold text-gaet-800 mb-6">
-          Điều khoản sử dụng
+            {t("footer_terms")}
           </h2>
         </div>
         <BlocksRenderer
-          content={data.data.content}
+          content={data.data.attributes.content}
           blocks={{
             image: ({ image }) => {
               return (

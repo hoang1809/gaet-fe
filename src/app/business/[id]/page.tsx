@@ -33,20 +33,24 @@ const BusinessDetailPage = ({ params }: Props) => {
   return (
     <>
       <HeroSection
-        url={getStrapiMedia(data.data.cover.url)}
-        title={data.data.title}
-        subtitle={data.data.subtitle}
+        url={getStrapiMedia(data.data.attributes.cover.data.attributes.url)}
+        title={data.data.attributes.title}
+        subtitle={data.data.attributes.subtitle}
       />
 
-      <OverviewSection general={data.data.general} />
+      <OverviewSection general={data.data.attributes.general} />
 
-      <ActivitiesSection layout={data.data.activities_layout} activities={data.data.activities} commitment={data.data.commitment}/>
+      <ActivitiesSection
+        layout={data.data.attributes.activities_layout}
+        activities={data.data.attributes.activities}
+        commitment={data.data.attributes.commitment}
+      />
 
-      <ImageSection images={data.data.images}/>
+      <ImageSection images={data.data.attributes.images.data} />
 
-      <OtherBusiness id={data.data.documentId}/>
+      <OtherBusiness id={data.data.id} />
 
-      <ContactSection/>
+      <ContactSection />
     </>
   );
 };

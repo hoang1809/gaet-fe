@@ -30,7 +30,7 @@ const OrganizationPage = () => {
       </div>
       <Container className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl space-y-12 pb-0">
         <div className="mx-auto max-w-[65ch]">
-          <p className="text-lg">{data.data.description}</p>
+          <p className="text-lg">{data.data.attributes.description}</p>
         </div>
         <div>
           <div className="bg-gaet-600 text-white rounded-t-lg p-4 flex justify-center items-center">
@@ -56,7 +56,7 @@ const OrganizationPage = () => {
           {t("organization_directly_affiliated_agencies")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.data.directly_affiliated_agencies.map((agency) => (
+          {data.data.attributes.directly_affiliated_agencies.map((agency) => (
             <div
               key={agency.id}
               className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-all duration-300 border-l-4 border-gaet-500"
@@ -72,7 +72,7 @@ const OrganizationPage = () => {
           {t("organization_subsidiary_companies")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.data.subsidiary_companies.map((company) => (
+          {data.data.attributes.subsidiary_companies.map((company) => (
             <div
               key={company.id}
               className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-all duration-300 border-l-4 border-gaet-500"
@@ -88,7 +88,7 @@ const OrganizationPage = () => {
           {t("organization_representative_offices")}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {data.data.representative_offices.map((office) => (
+          {data.data.attributes.representative_offices.map((office) => (
             <div
               key={office.id}
               className="bg-white shadow-md rounded-lg p-4 hover:shadow-lg transition-all duration-300 border-l-4 border-gaet-500"

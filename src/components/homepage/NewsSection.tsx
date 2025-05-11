@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 const NewsSection = () => {
   const { isLoading, error, data } = useFetchNews();
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   if (isLoading) {
     return <Loading />;
@@ -29,31 +29,30 @@ const NewsSection = () => {
       <div className="flex justify-between items-end mb-12">
         <div>
           <span className="text-sm font-semibold text-gaet-600 uppercase tracking-wider">
-            {t('homepage_news_and_events')}
+            {t("homepage_news_and_events")}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mt-2 header-underline">
-            {t('homepage_news')}
+            {t("homepage_news")}
           </h2>
         </div>
         <Link
           href="/news"
           className="hidden md:flex items-center text-gaet-600 font-medium hover:text-gaet-800 transition-colors"
         >
-          {t('homepage_view_all_news')}
+          {t("homepage_view_all_news")}
           <ArrowRight size={16} className="ml-2" />
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {data.data.map((item) => (
           <InfoCard
-            key={item.documentId}
-            title={item.title}
-            id={item.documentId}
-            tag={item.tags[0]?.name}
-            createdAt={item.createdAt}
-            image={getStrapiMedia(item.cover.url)}
-            description={item.description}
-            detailPath="news"
+            key={item.id}
+            title={item.attributes.title}
+            tag={item.attributes.tags.data[0]?.attributes.name}
+            createdAt={item.attributes.createdAt}
+            image={getStrapiMedia(item.attributes.cover.data.attributes.url)}
+            description={item.attributes.description}
+            url={`/news/${item.id}`}
           />
         ))}
       </div>

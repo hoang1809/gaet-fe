@@ -15,12 +15,13 @@ interface Office {
 
 interface OrganizationalStructure {
   id: number;
-  documentId: string;
-  description: string;
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  directly_affiliated_agencies: Agency[];
-  subsidiary_companies: Company[];
-  representative_offices: Office[];
+  attributes: {
+    description: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    directly_affiliated_agencies: Agency[];
+    subsidiary_companies: Company[];
+    representative_offices: Office[];
+  };
 }

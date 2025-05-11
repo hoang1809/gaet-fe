@@ -7,7 +7,7 @@ import InfoCard from "../common/InfoCard";
 import { getStrapiMedia } from "@/utils/getStrapiMedia";
 import { useTranslation } from "react-i18next";
 type Props = {
-  id: string;
+  id: number;
 };
 
 const OtherBusiness = ({ id }: Props) => {
@@ -34,16 +34,15 @@ const OtherBusiness = ({ id }: Props) => {
           </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {data.data
-          .filter((item) => item.documentId !== id)
+          .filter((item) => item.id !== id)
           .slice(0, 2)
           .map((item) => (
             <InfoCard
-              key={item.documentId}
-              title={item.title}
-              id={item.documentId}
-              image={getStrapiMedia(item.cover.url)}
-              description={item.general}
-              detailPath="business"
+              key={item.id}
+              title={item.attributes.title}
+              image={getStrapiMedia(item.attributes.cover.data.attributes.url)}
+              description={item.attributes.general}
+              url={`/business/${item.id}`}
             />
           ))}
       </div>

@@ -36,7 +36,7 @@ const VisionPage = () => {
               {t("vision_vision")}
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              {data.data.vision}
+              {data.data.attributes.vision}
             </p>
 
             <div className="mt-12 relative">
@@ -46,7 +46,7 @@ const VisionPage = () => {
                   {t("vision_mission")}
                 </h2>
                 <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                  {data.data.mission}
+                  {data.data.attributes.mission}
                 </p>
               </div>
             </div>
@@ -58,7 +58,7 @@ const VisionPage = () => {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {data.data.core_values.map((value, index) => (
+              {data.data.attributes.core_values.map((value, index) => (
                 <div
                   key={index}
                   className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg border border-gray-100"
@@ -85,7 +85,7 @@ const VisionPage = () => {
 
             <div className="bg-white shadow-lg rounded-lg p-8 border-t-4 border-gaet-600">
               <ul className="space-y-4">
-                {data.data.objectives.map((objective) => (
+                {data.data.attributes.objectives.map((objective) => (
                   <li className="flex items-start" key={objective.id}>
                     <div className="bg-gaet-100 rounded-full p-1 mr-3 mt-1">
                       <div className="bg-gaet-600 rounded-full w-3 h-3"></div>

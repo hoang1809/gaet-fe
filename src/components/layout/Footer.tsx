@@ -79,16 +79,16 @@ const Footer: React.FC = () => {
                   className="mr-3 flex-shrink-0 text-gray-500"
                 />
                 <span className="text-gray-400 text-sm">
-                  {infor.data.data.address}
+                  {infor.data.data.attributes.address}
                 </span>
               </li>
               <li className="flex items-center">
                 <Mail size={16} className="mr-3 flex-shrink-0 text-gray-500" />
                 <a
-                  href={`mailto:${infor.data.data.email}`}
+                  href={`mailto:${infor.data.data.attributes.email}`}
                   className="text-gray-400 text-sm hover:text-white transition-colors"
                 >
-                  {infor.data.data.email}
+                  {infor.data.data.attributes.email}
                 </a>
               </li>
               <li className="flex items-center">
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
                     href="tel:+84243832537"
                     className="hover:text-white transition-colors block"
                   >
-                    {infor.data.data.phone_number1}
+                    {infor.data.data.attributes.phone_number1}
                   </a>
                 </div>
               </li>
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
                     href="tel:+84243832771"
                     className="hover:text-white transition-colors block"
                   >
-                    {infor.data.data.phone_number2}
+                    {infor.data.data.attributes.phone_number2}
                   </a>
                 </div>
               </li>
@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
                   href="https://gaet.com.vn"
                   className="text-gray-400 text-sm hover:text-white transition-colors"
                 >
-                  {infor.data.data.website}
+                  {infor.data.data.attributes.website}
                 </a>
               </li>
             </ul>
@@ -134,10 +134,10 @@ const Footer: React.FC = () => {
               {data.data.map((item) => (
                 <li key={item.id}>
                   <Link
-                    href={`business/${item.documentId}`}
+                    href={`business/${item.id}`}
                     className="text-gray-400 hover:text-white text-sm transition-colors block"
                   >
-                    {item.title
+                    {item.attributes.title
                       .toLowerCase()
                       .split(" ")
                       .map(

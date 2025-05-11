@@ -24,23 +24,25 @@ const HistoryPage = () => {
       <div className="bg-gaet-700 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-bold text-white text-center">
-            {t('history_title')}
+            {t("history_title")}
           </h1>
         </div>
       </div>
       <Container className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <div className="mx-auto max-w-[65ch]">
           <h2 className="text-3xl font-bold text-gaet-800 mb-6">
-            {t('history_development')}
+            {t("history_development")}
           </h2>
-          <p className="text-lg text-justify">{data.data.history_of_development}</p>
+          <p className="text-lg text-justify">
+            {data.data.attributes.history_of_development}
+          </p>
         </div>
       </Container>
       <Container className="pb-6">
         <div className="relative ml-6 md:mx-auto md:max-w-5xl">
           <div className="absolute top-0 bottom-0 border-l-4 border-gaet-600"></div>
 
-          {data.data.milestones.map((milestone) => (
+          {data.data.attributes.milestones.map((milestone) => (
             <div
               key={milestone.year}
               className="flex items-center mb-16 animate-fade-in"
@@ -62,11 +64,14 @@ const HistoryPage = () => {
       <Container className="md:max-w-5xl pt-0">
         <div className="mt-16 text-center">
           <h2 className="text-2xl font-bold text-gaet-700 mb-6">
-            {t('history_notable_chievements')}
+            {t("history_notable_chievements")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {data.data.achievements.map((achievement) => (
-              <div key={achievement.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300">
+            {data.data.attributes.achievements.map((achievement) => (
+              <div
+                key={achievement.id}
+                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300"
+              >
                 <div className="text-4xl font-bold text-gaet-600 mb-3">
                   {achievement.time}
                 </div>

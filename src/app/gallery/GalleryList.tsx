@@ -76,12 +76,11 @@ const GalleryList = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {data.data.map((item) => (
             <InfoCard
-              key={item.documentId}
-              title={item.title}
-              id={item.documentId}
-              createdAt={item.createdAt}
-              image={getStrapiMedia(item.cover.url)}
-              detailPath="gallery"
+              key={item.id}
+              title={item.attributes.title}
+              createdAt={item.attributes.createdAt}
+              image={getStrapiMedia(item.attributes.cover.data.attributes.url)}
+              url={`/gallery/${item.id}`}
             />
           ))}
         </div>

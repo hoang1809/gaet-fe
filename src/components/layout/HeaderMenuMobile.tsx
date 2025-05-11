@@ -46,8 +46,8 @@ export function HeaderMenuMoile() {
       subItems:
         !isLoading && data
           ? data.data.map((item) => ({
-              label: item.title,
-              href: `/business/${item.documentId}`,
+              label: item.attributes.title,
+              href: `/business/${item.id}`,
             }))
           : [],
     },
